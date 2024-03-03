@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: arial, Sans-Serif;
+  background-color: #e2edff;
+  box-sizing: border-box;
+}
+
+/*background text*/
+.background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  z-index: -1;
+}
+
+.background .text {
+  margin: auto;
+  text-align: center;
+  opacity: .3;
+  border: 5px solid black;
+}
+
+.background .text h3 {
+  font-size: 500px;
+}
+
+.background .text h4 {
+  font-size: 100px;
+}
+
+/*navbar*/
+.navbar {
+  background-color: blue;
+  border-bottom: 2px solid green;
+  padding: .5rem 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: .5rem;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .logo {
+  font-size: 2rem;
+  font-weight: 1000;
+  font-style: italic;
+  color: #14b814;
+}
+
+.navbar .logo span {
+  color: green;
+}
+
+.navbar .navbar-nav {
+  list-style: none;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .navbar-nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: .3rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #14b814;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+#hamburger-menu span {
+  display: block;
+  background-color: #999;
+  width: 3rem;
+  height: 3px;
+  border-radius: 3px;
+}
+
+/*hero*/
+.hero {
+  width: 100%;
+  height: 60rem;
+  margin-top: 5rem;
+  background-image: url(img/hero/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: cover;
+  background-position: center;
+  border-top: 5px solid blue;
+  border-bottom: 5px solid green;
+  display: flex;
+}
+
+.hero h1 {
+  color: red;
+  margin: auto;
+  font-size: 70px;
+  text-shadow: 2px 2px 3px #eaeaea;
+}
+
+/*socials*/
+.socials {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+/*whatsapp*/
+.whatsapp {
+  display: none;
+}
+
+/*about*/
+#about,
+#products,
+#projects,
+#gallery,
+#contact {
+  text-align: center;
+  padding: 5rem .5rem;
+  border-bottom: 5px solid green;
+}
+
+#about h2,
+#products h2,
+#projects h2,
+#gallery h2,
+#contact h2 {
+  font-size: 50px;
+  margin-bottom: 1rem;
+}
+
+#about p,
+#products p,
+#products header,
+#products h3,
+#projects p,
+#gallery p,
+#contact p {
+  margin-bottom: 1rem;
+}
+
+/*products*/
+#products .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#products .card {
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 1rem;
+  width: 300px;
+  background-color: #eaeaea;
+}
+
+#products .card img {
+  width: 300px;
+}
+
+#products .card span {
+  display: block;
+  text-decoration: line-through;
+}
+
+#products .wa-button,
+#contact .wa-button {
+  display: block;
+  background-color: green;
+  border-radius: 30px;
+  width: 30%;
+  padding: 1rem;
+  margin: 3rem auto 0;
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+  
+}
+
+/*gallery & project*/
+#gallery .row,
+#projects .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#projects .row img,
+#gallery .row img {
+  margin: .5rem;
+  border-radius: 5px;
+  width: 150px;
+}
+
+/*contact*/
+#contact .row {
+  border: 1px solid black;
+}
+
+#contact .row .map {
+  width: 100%;
+  object-fit: over;
+}
+
+/*footer*/
+footer {
+  background-color: blue;
+  padding: 10px;
+  margin-bottom: 1rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  color: white;
+  margin: auto 0;
+  font-size: 1.3rem;
+}
+
+footer a {
+  color: salmon;
+  text-decoration: none;
+}
+
+
+/*responsif*/
+@media (max-width: 758px) {
+  html {
+    font-size: 75%;
+  }
+
+  .background .text h3 {
+    font-size: 250px;
+  }
+
+  .background .text h4 {
+    font-size: 50px;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 20rem;
+    height: 100vh;
+    background-color: #333;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    border-bottom: 1px solid #999;
+  }
+
+  #hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  #hamburger-menu.active span {
+    background-color: salmon;
+  }
+
+  .hero {
+    height: 20rem;
+  }
+
+  /*whatsapp*/
+  .whatsapp {
+    display: block;
+    position: fixed;
+    right: 10px;
+    bottom: 100px;
+  }
+
+  #products .wa-button,
+  #contact .wa-button {
+    width: 80%;
+  }
+
+  #about h2,
+  #products h2,
+  #projects h2,
+  #gallery h2,
+  #contact h2 {
+    font-size: 30px;
+  }
+
+}
